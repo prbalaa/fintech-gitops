@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: payment-gateway-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/YOUR_GITHUB_USERNAME/fintech-gitops.git
+    targetRevision: HEAD
+    path: payment-gateway
+    helm:
+      valueFiles:
+        - values/dev.yaml
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

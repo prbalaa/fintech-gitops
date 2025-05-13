@@ -1,8 +1,8 @@
 replicaCount: 2
 
 image:
-  repository: nginx
-  tag: 1.21.6
+  repository: prbalaa/payment-gateway
+  tag: v1  # Change to v2 for rollout test later
 
 service:
   nodePort: 30002

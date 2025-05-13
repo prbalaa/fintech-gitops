@@ -1,9 +1,6 @@
-replicaCount: 1
+replicaCount: 2
 
 image:
-  repository: nginx
-  tag: latest
-
-service:
-  nodePort: 30000
+  repository: yourdockerhub/payment-gateway
+  tag: v1
 
